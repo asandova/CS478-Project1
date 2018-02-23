@@ -7,7 +7,6 @@
 #include "GibbsSampler.h"
 using namespace std;
 
-
 vector<string> Gibbs::GibbsSampler(string DNA, int k, int t, int N) {
 
 }
