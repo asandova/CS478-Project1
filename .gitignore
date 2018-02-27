@@ -261,3 +261,5 @@ __pycache__/
 *.pyc
 
 *.o
+/CS486-Project1/GibbsSampler.txt
+/CS486-Project1/MedianStringProblem.txt

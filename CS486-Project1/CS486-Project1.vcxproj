@@ -117,11 +117,13 @@
   <ItemGroup>
     <ClInclude Include="FASTA.h" />
     <ClInclude Include="GibbsSampler.h" />
+    <ClInclude Include="HamminDistance.h" />
     <ClInclude Include="MedianString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FASTA.cpp" />
     <ClCompile Include="GibbsSampler.cpp" />
+    <ClCompile Include="HamminDistance.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MedianString.cpp" />
   </ItemGroup>

@@ -24,6 +24,9 @@
     <ClInclude Include="FASTA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HamminDistance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MedianString.cpp">
@@ -36,6 +39,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FASTA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HamminDistance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

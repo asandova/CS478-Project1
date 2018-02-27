@@ -1,6 +1,7 @@
 /**
 *	Class: CS 486
 *	File: GibbsSampler.cpp
+*	Assignment: Project 1
 *	Author(s): August B.Sandoval
 *	Purpose: contains the implementation of static class Gibbs
 **/

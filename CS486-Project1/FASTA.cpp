@@ -1,6 +1,7 @@
 /**
 *	Class: CS 486
 *	File: FASTA.cpp
+*	Assignment: Project 1
 *	Author(s): August B.Sandoval
 *	Purpose: contains the class implementation of FASTA
 **/

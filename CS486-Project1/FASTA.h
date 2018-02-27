@@ -1,5 +1,7 @@
 /**
-*	Class:FASTA.h
+*	Class: CS486
+*	File: FASTA.h
+*	Assignment: Project 1
 *	Author(s): August B.Sandoval
 *	Purpose: contains the class definition of FASTA
 **/

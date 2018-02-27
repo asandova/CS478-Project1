@@ -1,7 +1,8 @@
 /**
 *	Class: CS 486
 *	File: GibbsSampler.h
-*	Author(s): August B.Sandoval
+*	Assignment: Project 1
+*	Author(s): August B.Sandoval, Hector Rodriguez Alva
 *	Purpose: contains the class definition of Gibbs
 **/
 #ifndef GIBBSSAMPLER_H
@@ -15,9 +16,7 @@ using namespace std;
 class Gibbs {
 
 public:
-
 	static vector<string> GibbsSampler(string DNA,int k, int t, int N);
-
 };
 
 #endif // !GIBBSSAMPLER_H
