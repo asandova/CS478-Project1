@@ -28,8 +28,9 @@ string MidString::MedianString(vector<string> dna, int k) {
 
 string MidString::numberToPattern(int index, int k) {
 	if (k == 1) {
-		string temp = "" + numberToSymbol(index);
-		return temp;
+		string temp = "";
+		char sym = numberToSymbol(index);
+		return temp + sym;
 	}
 	int prefixIndex = index / 4;
 	int r = index % 4;
