@@ -42,8 +42,12 @@ vector<double> profile(vector<string> motifs, int ex) {
 }
 
 */
-
+vector< vector< int > > Gibbs::sequenceSet = vector< vector<int>>();
+vector< int > Gibbs::startingPosition = vector <int>();
+vector< vector< double > > Gibbs::profileMatrice = vector< vector<double>>();
+vector<double> Gibbs::charFrequency = vector<double>();
 const string Gibbs::lettersAllowed = "ATCGatcg";
+int Gibbs::motifLength = 0;
 
 int Gibbs::generateRandom(std::vector<double> const &d)
 {
@@ -54,11 +58,11 @@ int Gibbs::generateRandom(std::vector<double> const &d)
 }
 
 
-int Gibbs::GibbsAlgorithm(vector<string> const &s, int const motifSize)
+void Gibbs::GibbsAlgorithm(vector<string> const &s, int const motifSize)
 {
 	motifLength = motifSize;
 	sequenceSet.resize(s.size());
-	startingPosition.resize(s.size(), 0.0);
+	startingPosition.resize(s.size(), 0);
 	charFrequency.resize(lettersAllowed.size(), 1.);
 	for (size_t i = 0; i < s.size(); ++i) {
 		sequenceSet[i].resize(s[i].size());
@@ -66,6 +70,7 @@ int Gibbs::GibbsAlgorithm(vector<string> const &s, int const motifSize)
 		for_each(sequenceSet[i].begin(), sequenceSet[i].end(), [&](int c) {++charFrequency[c]; });
 	}
 	profileMatrice = vector<vector<double>>(motifSize + 1, vector<double>(lettersAllowed.size(), 1. / lettersAllowed.size()));
+	
 }
 
 void Gibbs::normalize(vector<double> v)

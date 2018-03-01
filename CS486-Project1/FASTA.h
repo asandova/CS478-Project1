@@ -25,13 +25,14 @@ private:
 	vector< vector<string> > sequences;
 
 public:
+	friend ostream& operator<<(ostream & out, const FASTA& f);
 	FASTA();
 	FASTA(string filename);
 	void readFile(string filename);
 	void addHeader(string header);
-	void addSequences(string sequence, int headerID);
+	void addSequences(string sequence, size_t headerID);
 	int getHeaderID(string header);
-	vector<string> getSequences(int HeaderID);
+	vector<string> getSequences(size_t HeaderID);
 
 };
 

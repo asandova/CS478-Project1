@@ -28,13 +28,13 @@ void FASTA::readFile(string filename) {
 	int num = 0;
 	ifile.open(filename, ifstream::in);
 	if (ifile.is_open()) {
-		while (!ifile.eof) {
+		while (!ifile.eof() ) {
 			getline(ifile, l);
 			if (l[0] == '>') {
 				addHeader(l.substr(2, l.size()-2 ));
 				num++;
 			}
-			else if(num > 1){
+			else if(num > 0){
 				addSequences(l, num-1);
 			}
 		}
@@ -42,13 +42,13 @@ void FASTA::readFile(string filename) {
 }
 void FASTA::addHeader(string header) {
 
-	if (getHeaderID(header) != -1) {
+	if (getHeaderID(header) == -1) {
 		headers.push_back(header);
 		vector<string> seq = vector<string>();
 		sequences.push_back(seq);
 	}
 }
-void FASTA::addSequences(string sequence, int headerID) {
+void FASTA::addSequences(string sequence, size_t headerID) {
 	sequences[headerID].push_back(sequence);
 }
 int FASTA::getHeaderID(string header) {
@@ -61,6 +61,18 @@ int FASTA::getHeaderID(string header) {
 	}
 	return -1;
 }
-vector<string> FASTA::getSequences(int HeaderID) {
+vector<string> FASTA::getSequences(size_t HeaderID) {
 	return sequences[HeaderID];
+}
+
+ostream& operator<<(ostream & out, const FASTA& f) {
+	for (size_t i = 0; i < f.headers.size(); i++) {
+		out << f.headers[i] << endl;
+		vector<string> seq = f.sequences[i];
+		vector<string>::const_iterator itr;
+		for (itr = seq.begin(); itr != seq.end(); ++itr) {
+			out << *itr << endl;
+		}
+	}
+	return out;
 }

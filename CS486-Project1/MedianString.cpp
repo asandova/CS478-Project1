@@ -11,15 +11,6 @@
 #include <math.h>
 using namespace std;
 
-string MidString::MedianString(vector<string> Sequences, int k) {
-	string bestK_mer = Sequences[0];
-	size_t Distance = numeric_limits<size_t>::max();
-
-	for (size_t i = 1; i < Sequences.size(); i++) {
-		
-	}
-}
-
 string MidString::MedianString(vector<string> dna, int k) {
 	size_t distance = numeric_limits<size_t>::max();
 	string median = "";
@@ -34,15 +25,18 @@ string MidString::MedianString(vector<string> dna, int k) {
 	return median;
 }
 
+
 string MidString::numberToPattern(int index, int k) {
 	if (k == 1) {
-		return ("" + numberToSymbol(index));
+		string temp = "" + numberToSymbol(index);
+		return temp;
 	}
 	int prefixIndex = index / 4;
 	int r = index % 4;
 	string prefixPattern = numberToPattern(prefixIndex, k - 1);
 	char symbol = numberToSymbol(r);
-	return (prefixPattern + symbol);
+	string pat = prefixPattern + symbol;
+	return (pat);
 }
 
 char MidString::numberToSymbol(int num) {
